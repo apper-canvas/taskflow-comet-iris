@@ -145,10 +145,10 @@ const Analytics = () => {
           <ApperIcon name={icon} className="w-6 h-6 text-white" />
         </div>
       </div>
-      <div className="text-2xl font-bold text-surface-900 dark:text-white mb-1">
+      <div className="text-2xl font-bold text-readable mb-1">
         {value}
       </div>
-      <div className="text-sm text-surface-600 dark:text-surface-400 mb-1">
+      <div className="text-sm text-readable-secondary mb-1">
         {title}
       </div>
       {subtitle && (
@@ -165,7 +165,7 @@ const Analytics = () => {
       animate={{ opacity: 1, y: 0 }}
       className={`glass-card p-6 rounded-2xl ${className}`}
     >
-      <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-4">
+      <h3 className="text-lg font-semibold text-readable mb-4">
         {title}
       </h3>
       {children}
@@ -191,7 +191,7 @@ const Analytics = () => {
                 <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
                   TaskFlow
                 </h1>
-                <p className="text-xs sm:text-sm text-surface-600 dark:text-surface-400 hidden sm:block">
+                <p className="text-xs sm:text-sm text-readable-secondary hidden sm:block">
                   Analytics Dashboard
                 </p>
               </div>
@@ -201,7 +201,7 @@ const Analytics = () => {
               {/* Navigation */}
               <Link
                 to="/"
-                className="px-4 py-2 text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="px-4 py-2 text-readable-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Tasks
               </Link>
@@ -215,7 +215,7 @@ const Analytics = () => {
               >
                 <ApperIcon 
                   name={darkMode ? "Sun" : "Moon"} 
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-surface-700 dark:text-surface-300" 
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-readable" 
                 />
               </motion.button>
             </div>
@@ -231,10 +231,10 @@ const Analytics = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <h2 className="text-3xl font-bold text-surface-900 dark:text-white mb-2">
+          <h2 className="text-3xl font-bold text-readable mb-2">
             Analytics Dashboard
           </h2>
-          <p className="text-surface-600 dark:text-surface-400">
+          <p className="text-readable-secondary">
             Track your productivity and project progress
           </p>
         </motion.div>
@@ -373,10 +373,10 @@ const Analytics = () => {
                       style={{ backgroundColor: project.color }}
                     />
                     <div>
-                      <div className="font-medium text-surface-900 dark:text-white">
+                      <div className="font-medium text-readable">
                         {project.name}
                       </div>
-                      <div className="text-sm text-surface-600 dark:text-surface-400">
+                      <div className="text-sm text-readable-secondary">
                         {project.completed}/{project.total} tasks completed
                       </div>
                     </div>
@@ -407,10 +407,10 @@ const Analytics = () => {
                       className="flex items-center justify-between p-4 bg-surface-50 dark:bg-surface-800 rounded-xl"
                     >
                       <div>
-                        <div className="font-medium text-surface-900 dark:text-white mb-1">
+                        <div className="font-medium text-readable mb-1">
                           {task.title}
                         </div>
-                        <div className="text-sm text-surface-600 dark:text-surface-400">
+                        <div className="text-sm text-readable-secondary">
                           {task.timeEntries.length} time entries
                         </div>
                       </div>
@@ -418,7 +418,7 @@ const Analytics = () => {
                         <div className="font-bold text-lg text-surface-900 dark:text-white">
                           {totalTime}h
                         </div>
-                        <div className="text-sm text-surface-600 dark:text-surface-400">
+                        <div className="text-sm text-readable-secondary">
                           Total time
                         </div>
                       </div>

@@ -22,6 +22,7 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #1e293b;
   }
 
   * {
@@ -32,6 +33,10 @@
 
   input, textarea, select {
     font-family: inherit;
+  }
+  
+  .dark body {
+    color: #f1f5f9;
   }
 }
 
@@ -55,6 +60,32 @@
 
   .neu-button:active {
     box-shadow: inset 2px 2px 8px #bebebe, inset -2px -2px 8px #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-readable {
+    color: #1e293b;
+  }
+  
+  .dark .text-readable {
+    color: #f1f5f9;
+  }
+  
+  .text-readable-secondary {
+    color: #475569;
+  }
+  
+  .dark .text-readable-secondary {
+    color: #cbd5e1;
+  }
+  
+  .text-readable-muted {
+    color: #64748b;
+  }
+  
+  .dark .text-readable-muted {
+    color: #94a3b8;
   }
 }
 

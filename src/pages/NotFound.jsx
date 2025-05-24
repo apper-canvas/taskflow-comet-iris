@@ -36,7 +36,7 @@ const NotFound = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl sm:text-2xl font-semibold text-surface-900 dark:text-white mb-3 sm:mb-4"
+            className="text-xl sm:text-2xl font-semibold text-readable mb-3 sm:mb-4"
           >
             Page Not Found
           </motion.h2>
@@ -45,7 +45,7 @@ const NotFound = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-sm sm:text-base text-surface-600 dark:text-surface-400 mb-6 sm:mb-8"
+            className="text-sm sm:text-base text-readable-secondary mb-6 sm:mb-8"
           >
             The page you're looking for doesn't exist or has been moved. 
             Let's get you back on track with your tasks!
