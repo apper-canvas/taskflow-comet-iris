@@ -292,7 +292,7 @@ const MainFeature = () => {
               onClick={() => setShowTaskForm(!showTaskForm)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white p-3 sm:p-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 mb-6"
+              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white p-3 sm:p-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 mb-6"
             >
               <ApperIcon name="Plus" className="w-5 h-5" />
               <span>New Task</span>
@@ -303,7 +303,7 @@ const MainFeature = () => {
               <div className="mb-4">
                 <Link
                   to="/analytics"
-                  className="w-full bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <ApperIcon name="BarChart3" className="w-5 h-5" />
                   <span>Analytics</span>
