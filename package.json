@@ -17,7 +17,8 @@
     "react-toastify": "^11.0.5",
     "lucide-react": "^0.299.0",
     "date-fns": "^4.1.0",
-    "@hello-pangea/dnd": "^16.5.0"
+    "@hello-pangea/dnd": "^16.5.0",
+    "recharts": "^2.8.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

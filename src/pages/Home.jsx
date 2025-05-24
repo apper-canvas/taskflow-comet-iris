@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import MainFeature from '../components/MainFeature'
 import ApperIcon from '../components/ApperIcon'
 
@@ -40,6 +41,14 @@ const Home = () => {
             </motion.div>
 
             {/* Dark Mode Toggle */}
+            <div className="flex items-center space-x-4">
+              <Link
+                to="/analytics"
+                className="px-4 py-2 text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                Analytics
+              </Link>
+              
             <motion.button
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.1 }}
@@ -51,6 +60,7 @@ const Home = () => {
                 className="w-5 h-5 sm:w-6 sm:h-6 text-surface-700 dark:text-surface-300" 
               />
             </motion.button>
+          </div>
           </div>
         </div>
       </motion.header>
