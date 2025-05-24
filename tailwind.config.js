@@ -31,19 +31,19 @@ export default {
           900: '#0f172a'
         }
       },
-    textColor: {
-      'primary-text': '#1e293b',
-      'secondary-text': '#475569',
-      'muted-text': '#64748b',
-      'light-text': '#f8fafc',
-      'dark-primary': '#f1f5f9',
-      'dark-secondary': '#cbd5e1',
-      'dark-muted': '#94a3b8'
-    }
+      textColor: {
+        'primary-text': '#1e293b',
+        'secondary-text': '#475569',
+        'muted-text': '#64748b',
+        'light-text': '#f8fafc',
+        'dark-primary': '#f1f5f9',
+        'dark-secondary': '#cbd5e1',
+        'dark-muted': '#94a3b8'
+      },
+      safelist: [
       fontFamily: {
-  safelist: [
     'text-primary-text', 'text-secondary-text', 'text-muted-text'
-  ],
+      ],
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
         heading: ['Inter', 'ui-sans-serif', 'system-ui']
       },
@@ -59,6 +59,5 @@ export default {
       }
     }
   },
-  plugins: [],
-  darkMode: 'class',
+  plugins: []
 }

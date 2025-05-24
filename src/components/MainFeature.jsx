@@ -320,8 +320,8 @@ const MainFeature = () => {
                 </Link>
               </div>
               
-              <h3 className="font-semibold text-surface-900 dark:text-white">Filters</h3>
               <h3 className="font-semibold text-readable">Filters</h3>
+              {[
                 { key: 'all', label: 'All Tasks', icon: 'List' },
                 { key: 'pending', label: 'Pending', icon: 'Clock' },
                 { key: 'in-progress', label: 'In Progress', icon: 'Play' },
@@ -541,8 +541,8 @@ const MainFeature = () => {
                 exit={{ opacity: 0, height: 0 }}
                 className="glass-card p-4 sm:p-6 rounded-2xl mb-6 overflow-hidden"
               >
-                <h3 className="text-lg sm:text-xl font-semibold text-surface-900 dark:text-white mb-4 sm:mb-6">
                 <h3 className="text-lg sm:text-xl font-semibold text-readable mb-4 sm:mb-6">
+                  {editingTimeEntry ? 'Edit Time Entry' : 'Log Time'}
                 </h3>
                 
                 <form onSubmit={handleTimeSubmit} className="space-y-4 sm:space-y-6">
