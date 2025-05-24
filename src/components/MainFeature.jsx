@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { toast } from 'react-toastify'
 import { format, isValid } from 'date-fns'
@@ -137,12 +137,14 @@ const MainFeature = () => {
     }
   }
 
-  const filteredTasks = tasks.filter(task => {
-    const matchesFilter = activeFilter === 'all' || task.status === activeFilter
-    const matchesSearch = task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         task.description.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesFilter && matchesSearch
-  })
+  const filteredTasks = useMemo(() => {
+    return tasks.filter(task => {
+      const matchesFilter = activeFilter === 'all' || task.status === activeFilter
+      const matchesSearch = task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           task.description.toLowerCase().includes(searchQuery.toLowerCase())
+      return matchesFilter && matchesSearch
+    })
+  }, [tasks, activeFilter, searchQuery])
 
   const getProjectName = (projectId) => {
     const project = projects.find(p => p.id === projectId)
