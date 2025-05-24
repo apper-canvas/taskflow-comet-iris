@@ -188,7 +188,7 @@ const Analytics = () => {
                 <ApperIcon name="CheckSquare" className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400">
                   TaskFlow
                 </h1>
                 <p className="text-xs sm:text-sm text-readable-secondary hidden sm:block">
