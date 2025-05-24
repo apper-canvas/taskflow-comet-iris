@@ -292,7 +292,7 @@ const MainFeature = () => {
               onClick={() => setShowTaskForm(!showTaskForm)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white p-3 sm:p-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 mb-6"
+              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 btn-text-primary p-3 sm:p-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 mb-6"
             >
               <ApperIcon name="Plus" className="w-5 h-5" />
               <span>New Task</span>
@@ -303,7 +303,7 @@ const MainFeature = () => {
               <div className="mb-4">
                 <Link
                   to="/analytics"
-                  className="w-full bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 btn-text-primary p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <ApperIcon name="BarChart3" className="w-5 h-5" />
                   <span>Analytics</span>
@@ -313,7 +313,7 @@ const MainFeature = () => {
               <div className="mb-4">
                 <Link
                   to="/calendar"
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 btn-text-primary p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <ApperIcon name="Calendar" className="w-5 h-5" />
                   <span>Calendar</span>
@@ -321,7 +321,7 @@ const MainFeature = () => {
               </div>
               
               <h3 className="font-semibold text-readable">Filters</h3>
-              {[
+              <h3 className="font-semibold text-readable-primary">Filters</h3>
                 { key: 'all', label: 'All Tasks', icon: 'List' },
                 { key: 'pending', label: 'Pending', icon: 'Clock' },
                 { key: 'in-progress', label: 'In Progress', icon: 'Play' },
@@ -334,18 +334,18 @@ const MainFeature = () => {
                   className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 ${
                     activeFilter === filter.key
                       ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-                      : 'text-readable-secondary hover:bg-surface-100 dark:hover:bg-surface-700'
+                      : 'text-surface-readable hover:bg-surface-100 dark:hover:bg-surface-700'
                   }`}
                 >
                   <ApperIcon name={filter.icon} className="w-4 h-4" />
-                  <span className="text-sm font-medium text-surface-900 dark:text-surface-100">{filter.label}</span>
+                  <span className="text-sm font-medium text-readable-primary">{filter.label}</span>
                 </motion.button>
               ))}
             </div>
 
             {/* Projects */}
             <div className="mt-6 pt-6 border-t border-surface-200 dark:border-surface-700">
-              <h3 className="font-semibold text-surface-900 dark:text-surface-100 mb-3">Projects</h3>
+              <h3 className="font-semibold text-readable-primary mb-3">Projects</h3>
               <div className="space-y-2">
                 {projects.map((project) => (
                   <div key={project.id} className="flex items-center space-x-3 p-2 rounded-lg">
@@ -353,7 +353,7 @@ const MainFeature = () => {
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: project.color }}
                     />
-                    <span className="text-sm text-readable-secondary">
+                    <span className="text-sm text-surface-readable">
                       {project.name}
                     </span>
                   </div>
@@ -375,7 +375,7 @@ const MainFeature = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center justify-between mb-4">
               {/* Search */}
               <div className="relative flex-1 max-w-md">
-                <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-surface-500" />
+                <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-surface-muted" />
                 <input
                   type="text"
                   placeholder="Search tasks..."
@@ -420,21 +420,21 @@ const MainFeature = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {/* Title */}
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Task Title *
                       </label>
                       <input
                         type="text"
                         value={formData.title}
                         onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
-                        className="w-full p-3 sm:p-4 bg-surface-50 dark:bg-surface-800 border border-surface-200 dark:border-surface-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200"
+                        className="w-full p-3 sm:p-4 bg-surface-50 dark:bg-surface-800 border border-surface-200 dark:border-surface-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200 form-input"
                         placeholder="Enter task title..." 
                       />
                     </div>
 
                     {/* Priority */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Priority
                       </label>
                       <select
@@ -450,7 +450,7 @@ const MainFeature = () => {
 
                     {/* Due Date */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Due Date
                       </label>
                       <input
@@ -463,7 +463,7 @@ const MainFeature = () => {
 
                     {/* Project */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Project
                       </label>
                       <select
@@ -480,21 +480,21 @@ const MainFeature = () => {
 
                     {/* Tags */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Tags (comma separated)
                       </label>
                       <input
                         type="text"
                         value={formData.tags}
                         onChange={(e) => setFormData(prev => ({ ...prev, tags: e.target.value }))}
-                        className="w-full p-3 sm:p-4 bg-surface-50 dark:bg-surface-800 border border-surface-200 dark:border-surface-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200"
+                        className="w-full p-3 sm:p-4 bg-surface-50 dark:bg-surface-800 border border-surface-200 dark:border-surface-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200 form-input"
                         placeholder="design, frontend, urgent..."
                       />
                     </div>
 
                     {/* Description */}
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Description
                       </label>
                       <textarea
@@ -513,7 +513,7 @@ const MainFeature = () => {
                       type="submit"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex-1 sm:flex-none bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                      className="flex-1 sm:flex-none bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 btn-text-primary px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       {editingTask ? 'Update Task' : 'Create Task'}
                     </motion.button>
@@ -522,7 +522,7 @@ const MainFeature = () => {
                       onClick={resetForm}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex-1 sm:flex-none bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 text-surface-700 dark:text-surface-300 px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                      className="flex-1 sm:flex-none bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 btn-text-secondary px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       Cancel
                     </motion.button>
@@ -549,7 +549,7 @@ const MainFeature = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                     {/* Hours */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Hours *
                       </label>
                       <input
@@ -565,7 +565,7 @@ const MainFeature = () => {
 
                     {/* Date */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Date *
                       </label>
                       <input
@@ -578,7 +578,7 @@ const MainFeature = () => {
 
                     {/* Description */}
                     <div>
-                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
+                      <label className="block text-sm font-medium text-readable-primary mb-2">
                         Description
                       </label>
                       <input
@@ -597,7 +597,7 @@ const MainFeature = () => {
                       type="submit"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex-1 sm:flex-none bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                      className="flex-1 sm:flex-none bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 btn-text-primary px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       {editingTimeEntry ? 'Update Time' : 'Add Time'}
                     </motion.button>
@@ -606,7 +606,7 @@ const MainFeature = () => {
                       onClick={closeTimeForm}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex-1 sm:flex-none bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 text-surface-700 dark:text-surface-300 px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                      className="flex-1 sm:flex-none bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 btn-text-secondary px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       Cancel
                     </motion.button>
@@ -656,7 +656,7 @@ const MainFeature = () => {
                         <h4 className={`text-lg font-semibold ${
                           task.status === 'completed' 
                             ? 'text-readable-muted line-through' 
-                            : 'text-readable'
+                            : 'text-readable-primary'
                         }`}>
                           {task.title}
                         </h4>
@@ -706,13 +706,13 @@ const MainFeature = () => {
                       </div>
 
                       {task.description && (
-                        <p className="text-readable-secondary mb-3 text-sm sm:text-base">
+                        <p className="text-surface-readable mb-3 text-sm sm:text-base">
                           {task.description}
                         </p>
                       )}
 
                       {/* Task Meta */}
-                      <div className="flex flex-wrap gap-3 sm:gap-4 text-sm text-surface-500">
+                      <div className="flex flex-wrap gap-3 sm:gap-4 text-sm text-surface-muted">
                         {task.dueDate && (
                           <div className="flex items-center gap-1">
                             <ApperIcon name="Calendar" className="w-4 h-4" />
@@ -734,7 +734,7 @@ const MainFeature = () => {
                               {task.tags.map((tag, tagIndex) => (
                                 <span 
                                   key={tagIndex}
-                                  className="px-2 py-1 bg-surface-100 dark:bg-surface-700 text-surface-600 dark:text-surface-400 rounded-md text-xs"
+                                  className="px-2 py-1 bg-surface-100 dark:bg-surface-700 text-surface-readable rounded-md text-xs"
                                 >
                                   {tag}
                                 </span>
@@ -748,7 +748,7 @@ const MainFeature = () => {
                       {task.timeEntries && task.timeEntries.length > 0 && (
                         <div className="mt-4 pt-4 border-t border-surface-200 dark:border-surface-700">
                           <div className="flex items-center justify-between mb-3">
-                            <h5 className="text-sm font-medium text-surface-900 dark:text-surface-100">
+                            <h5 className="text-sm font-medium text-readable-primary">
                               Time Entries ({getTotalTimeForTask(task)}h total)
                             </h5>
                           </div>
@@ -760,11 +760,11 @@ const MainFeature = () => {
                               >
                                 <div className="flex-1">
                                   <div className="flex items-center gap-2 text-sm">
-                                    <span className="font-medium text-surface-900 dark:text-surface-100">
+                                    <span className="font-medium text-readable-primary">
                                       {timeEntry.hours}h
                                     </span>
                                     <span className="text-readable-muted">•</span>
-                                    <span className="text-readable-secondary">
+                                    <span className="text-surface-readable">
                                       {format(new Date(timeEntry.date), 'MMM dd, yyyy')}
                                     </span>
                                   </div>
@@ -812,10 +812,10 @@ const MainFeature = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-surface-100 dark:bg-surface-700 rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
                   <ApperIcon name="Search" className="w-8 h-8 sm:w-10 sm:h-10 text-readable-muted" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-surface-900 dark:text-surface-100 mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-readable-primary mb-2">
                   No tasks found
                 </h3>
-                <p className="text-readable-secondary text-sm sm:text-base">
+                <p className="text-surface-readable text-sm sm:text-base">
                   {searchQuery ? 'Try adjusting your search criteria' : 'Create your first task to get started'}
                 </p>
               </motion.div>

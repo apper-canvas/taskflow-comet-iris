@@ -36,7 +36,7 @@ const NotFound = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl sm:text-2xl font-semibold text-surface-900 dark:text-surface-100 mb-3 sm:mb-4"
+            className="text-xl sm:text-2xl font-semibold text-readable-primary mb-3 sm:mb-4"
           >
             Page Not Found
           </motion.h2>
@@ -45,7 +45,7 @@ const NotFound = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-sm sm:text-base text-surface-600 dark:text-surface-400 mb-6 sm:mb-8"
+            className="text-sm sm:text-base text-surface-readable mb-6 sm:mb-8"
           >
             The page you're looking for doesn't exist or has been moved. 
             Let's get you back on track with your tasks!
@@ -59,7 +59,7 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-2xl font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 btn-text-primary px-6 py-3 sm:px-8 sm:py-4 rounded-2xl font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
               <ApperIcon name="Home" className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="text-sm sm:text-base">Back to TaskFlow</span>
@@ -73,13 +73,13 @@ const NotFound = () => {
             transition={{ delay: 0.8 }}
             className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-surface-200/30 dark:border-surface-700/30"
           >
-            <p className="text-xs sm:text-sm text-surface-500 dark:text-surface-500 mb-3 sm:mb-4">
+            <p className="text-xs sm:text-sm text-surface-muted mb-3 sm:mb-4">
               Need help? Try these popular sections:
             </p>
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs sm:text-sm">
               <Link
                 to="/"
-                className="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-surface-readable hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Task Dashboard
               </Link>
@@ -87,7 +87,7 @@ const NotFound = () => {
                 to="/"
                 className="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
-                Project Management
+                className="text-surface-readable hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               </Link>
             </div>
           </motion.div>

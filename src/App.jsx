@@ -8,7 +8,7 @@ import Calendar from './pages/Calendar'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-surface-50 via-white to-primary-50 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900 text-readable">
+      <div className="min-h-screen bg-gradient-to-br from-surface-50 via-white to-primary-50 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900 text-readable-primary">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
@@ -28,7 +28,7 @@ function App() {
           pauseOnHover
           theme="colored"
           className="mt-16"
-          toastClassName="rounded-xl shadow-card bg-white dark:bg-surface-800 text-primary-text dark:text-dark-primary border border-surface-200 dark:border-surface-700"
+          toastClassName="rounded-xl shadow-card bg-white dark:bg-surface-800 text-readable-primary border border-surface-200 dark:border-surface-700"
         />
       </div>
     </Router>

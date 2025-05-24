@@ -65,27 +65,89 @@
 
 @layer utilities {
   .text-readable {
-    color: #1e293b;
+    color: #1e293b !important;
   }
   
   .dark .text-readable {
-    color: #f1f5f9;
+    color: #f1f5f9 !important;
   }
   
   .text-readable-secondary {
-    color: #475569;
+    color: #475569 !important;
   }
   
   .dark .text-readable-secondary {
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
   }
   
   .text-readable-muted {
-    color: #64748b;
+    color: #64748b !important;
   }
   
   .dark .text-readable-muted {
+    color: #94a3b8 !important;
+  }
+  
+  .text-readable-primary {
+    color: #1e293b;
+  }
+  
+  .dark .text-readable-primary {
+    color: #f1f5f9;
+  }
+  
+  .text-readable-light {
+    color: #f8fafc;
+  }
+  
+  .dark .text-readable-light {
+    color: #1e293b;
+  }
+  
+  .text-readable-inverse {
+    color: #f8fafc;
+  }
+  
+  .dark .text-readable-inverse {
+    color: #1e293b;
+  }
+  
+  .text-surface-readable {
+    color: #475569;
+  }
+  
+  .dark .text-surface-readable {
+    color: #cbd5e1;
+  }
+  
+  .text-surface-muted {
+    color: #64748b;
+  }
+  
+  .dark .text-surface-muted {
     color: #94a3b8;
+  }
+  
+  /* Form input text colors */
+  .form-input {
+    color: #1e293b !important;
+  }
+  
+  .dark .form-input {
+    color: #f1f5f9 !important;
+  }
+  
+  /* Button text utilities */
+  .btn-text-primary {
+    color: #ffffff !important;
+  }
+  
+  .btn-text-secondary {
+    color: #1e293b !important;
+  }
+  
+  .dark .btn-text-secondary {
+    color: #f1f5f9 !important;
   }
 }
 
