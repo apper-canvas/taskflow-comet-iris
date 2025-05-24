@@ -43,6 +43,12 @@ const Home = () => {
             {/* Dark Mode Toggle */}
             <div className="flex items-center space-x-4">
               <Link
+                to="/calendar"
+                className="px-4 py-2 text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                Calendar
+              </Link>
+              <Link
                 to="/analytics"
                 className="px-4 py-2 text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >

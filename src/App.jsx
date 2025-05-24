@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Analytics from './pages/Analytics'
+import Calendar from './pages/Calendar'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
         
         <ToastContainer

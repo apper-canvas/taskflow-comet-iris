@@ -310,6 +310,16 @@ const MainFeature = () => {
                 </Link>
               </div>
               
+              <div className="mb-4">
+                <Link
+                  to="/calendar"
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                >
+                  <ApperIcon name="Calendar" className="w-5 h-5" />
+                  <span>Calendar</span>
+                </Link>
+              </div>
+              
               <h3 className="font-semibold text-surface-900 dark:text-white">Filters</h3>
               {[
                 { key: 'all', label: 'All Tasks', icon: 'List' },
