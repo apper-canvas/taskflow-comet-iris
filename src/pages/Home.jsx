@@ -31,7 +31,7 @@ const Home = () => {
                 <ApperIcon name="CheckSquare" className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400">
+                <h1 className="text-xl sm:text-2xl font-bold text-surface-900 dark:text-surface-100">
                   TaskFlow
                 </h1>
                 <p className="text-xs sm:text-sm text-readable-secondary hidden sm:block">
@@ -44,13 +44,13 @@ const Home = () => {
             <div className="flex items-center space-x-4">
               <Link
                 to="/calendar"
-                className="px-4 py-2 text-readable-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="px-4 py-2 text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Calendar
               </Link>
               <Link
                 to="/analytics"
-                className="px-4 py-2 text-readable-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="px-4 py-2 text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Analytics
               </Link>
@@ -63,7 +63,7 @@ const Home = () => {
             >
               <ApperIcon 
                 name={darkMode ? "Sun" : "Moon"} 
-                className="w-5 h-5 sm:w-6 sm:h-6 text-readable" 
+                className="w-5 h-5 sm:w-6 sm:h-6 text-surface-700 dark:text-surface-300" 
               />
             </motion.button>
           </div>
@@ -83,7 +83,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-readable mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-surface-900 dark:text-surface-100 mb-4 sm:mb-6"
           >
             Organize Your
             <span className="block bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 bg-clip-text text-transparent">
@@ -123,10 +123,10 @@ const Home = () => {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <ApperIcon name={stat.icon} className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-readable mb-1 sm:mb-2">
+                <div className="text-2xl sm:text-3xl font-bold text-surface-900 dark:text-surface-100 mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm sm:text-base text-readable-secondary">
+                <div className="text-sm sm:text-base text-surface-600 dark:text-surface-400">
                   {stat.label}
                 </div>
               </motion.div>
@@ -157,7 +157,7 @@ const Home = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
               <ApperIcon name="CheckSquare" className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-semibold text-readable">TaskFlow</span>
+            <span className="text-lg font-semibold text-surface-900 dark:text-surface-100">TaskFlow</span>
           </div>
           <p className="text-readable-secondary text-sm sm:text-base">
             © 2024 TaskFlow. Built with passion for productivity.

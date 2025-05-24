@@ -59,7 +59,14 @@ export default {
   safelist: [
     'text-primary-text',
     'text-secondary-text', 
-    'text-muted-text'
+    'text-muted-text',
+    'text-readable',
+    'text-readable-secondary',
+    'text-readable-muted',
+    'text-surface-900',
+    'text-surface-700',
+    'text-surface-600',
+    'text-white'
   ],
   plugins: []
 }

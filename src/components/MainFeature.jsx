@@ -338,14 +338,14 @@ const MainFeature = () => {
                   }`}
                 >
                   <ApperIcon name={filter.icon} className="w-4 h-4" />
-                  <span className="text-sm font-medium text-readable">{filter.label}</span>
+                  <span className="text-sm font-medium text-surface-900 dark:text-surface-100">{filter.label}</span>
                 </motion.button>
               ))}
             </div>
 
             {/* Projects */}
             <div className="mt-6 pt-6 border-t border-surface-200 dark:border-surface-700">
-              <h3 className="font-semibold text-readable mb-3">Projects</h3>
+              <h3 className="font-semibold text-surface-900 dark:text-surface-100 mb-3">Projects</h3>
               <div className="space-y-2">
                 {projects.map((project) => (
                   <div key={project.id} className="flex items-center space-x-3 p-2 rounded-lg">
@@ -375,7 +375,7 @@ const MainFeature = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center justify-between mb-4">
               {/* Search */}
               <div className="relative flex-1 max-w-md">
-                <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-readable-muted" />
+                <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-surface-500" />
                 <input
                   type="text"
                   placeholder="Search tasks..."
@@ -420,7 +420,7 @@ const MainFeature = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {/* Title */}
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Task Title *
                       </label>
                       <input
@@ -428,13 +428,13 @@ const MainFeature = () => {
                         value={formData.title}
                         onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
                         className="w-full p-3 sm:p-4 bg-surface-50 dark:bg-surface-800 border border-surface-200 dark:border-surface-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200"
-                        placeholder="Enter task title..."
+                        placeholder="Enter task title..." 
                       />
                     </div>
 
                     {/* Priority */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Priority
                       </label>
                       <select
@@ -450,7 +450,7 @@ const MainFeature = () => {
 
                     {/* Due Date */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Due Date
                       </label>
                       <input
@@ -463,7 +463,7 @@ const MainFeature = () => {
 
                     {/* Project */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Project
                       </label>
                       <select
@@ -480,7 +480,7 @@ const MainFeature = () => {
 
                     {/* Tags */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Tags (comma separated)
                       </label>
                       <input
@@ -494,7 +494,7 @@ const MainFeature = () => {
 
                     {/* Description */}
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Description
                       </label>
                       <textarea
@@ -549,7 +549,7 @@ const MainFeature = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                     {/* Hours */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Hours *
                       </label>
                       <input
@@ -565,7 +565,7 @@ const MainFeature = () => {
 
                     {/* Date */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Date *
                       </label>
                       <input
@@ -578,7 +578,7 @@ const MainFeature = () => {
 
                     {/* Description */}
                     <div>
-                      <label className="block text-sm font-medium text-readable mb-2">
+                      <label className="block text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">
                         Description
                       </label>
                       <input
@@ -748,7 +748,7 @@ const MainFeature = () => {
                       {task.timeEntries && task.timeEntries.length > 0 && (
                         <div className="mt-4 pt-4 border-t border-surface-200 dark:border-surface-700">
                           <div className="flex items-center justify-between mb-3">
-                            <h5 className="text-sm font-medium text-readable">
+                            <h5 className="text-sm font-medium text-surface-900 dark:text-surface-100">
                               Time Entries ({getTotalTimeForTask(task)}h total)
                             </h5>
                           </div>
@@ -760,7 +760,7 @@ const MainFeature = () => {
                               >
                                 <div className="flex-1">
                                   <div className="flex items-center gap-2 text-sm">
-                                    <span className="font-medium text-readable">
+                                    <span className="font-medium text-surface-900 dark:text-surface-100">
                                       {timeEntry.hours}h
                                     </span>
                                     <span className="text-readable-muted">•</span>
@@ -812,7 +812,7 @@ const MainFeature = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-surface-100 dark:bg-surface-700 rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
                   <ApperIcon name="Search" className="w-8 h-8 sm:w-10 sm:h-10 text-readable-muted" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-readable mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-surface-900 dark:text-surface-100 mb-2">
                   No tasks found
                 </h3>
                 <p className="text-readable-secondary text-sm sm:text-base">

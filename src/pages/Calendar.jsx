@@ -193,13 +193,13 @@ const Calendar = () => {
             <div className="flex items-center space-x-4">
               <Link
                 to="/"
-                className="px-4 py-2 text-readable-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="px-4 py-2 text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Tasks
               </Link>
               <Link
                 to="/analytics"
-                className="px-4 py-2 text-readable-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="px-4 py-2 text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Analytics
               </Link>
@@ -212,7 +212,7 @@ const Calendar = () => {
               >
                 <ApperIcon 
                   name={darkMode ? "Sun" : "Moon"} 
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-readable" 
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-surface-700 dark:text-surface-300" 
                 />
               </motion.button>
             </div>
@@ -238,7 +238,7 @@ const Calendar = () => {
                 <ApperIcon name="ChevronLeft" className="w-5 h-5" />
               </motion.button>
               
-              <h2 className="text-2xl sm:text-3xl font-bold text-readable">
+              <h2 className="text-2xl sm:text-3xl font-bold text-surface-900 dark:text-surface-100">
                 {format(currentDate, 'MMMM yyyy')}
               </h2>
               
@@ -273,7 +273,7 @@ const Calendar = () => {
           {/* Week Days Header */}
           <div className="grid grid-cols-7 gap-2 mb-4">
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-              <div key={day} className="text-center py-2 text-sm font-medium text-readable-secondary">
+              <div key={day} className="text-center py-2 text-sm font-medium text-surface-600 dark:text-surface-400">
                 {day}
               </div>
             ))}
@@ -360,7 +360,7 @@ const Calendar = () => {
           transition={{ delay: 0.4 }}
           className="glass-card p-6 rounded-2xl mt-8"
         >
-          <h3 className="text-lg font-semibold text-readable mb-4">Priority Legend</h3>
+          <h3 className="text-lg font-semibold text-surface-900 dark:text-surface-100 mb-4">Priority Legend</h3>
           <div className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-red-500 rounded"></div>
@@ -398,7 +398,7 @@ const Calendar = () => {
               {/* Modal Header */}
               <div className="flex items-start justify-between mb-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-readable mb-2">
+                  <h3 className="text-2xl font-bold text-surface-900 dark:text-surface-100 mb-2">
                     {selectedTask.title}
                   </h3>
                   <div className="flex items-center gap-3">
@@ -428,8 +428,8 @@ const Calendar = () => {
               <div className="space-y-6">
                 {selectedTask.description && (
                   <div>
-                    <h4 className="text-sm font-medium text-readable mb-2">Description</h4>
-                    <p className="text-readable-secondary">
+                    <h4 className="text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">Description</h4>
+                    <p className="text-surface-600 dark:text-surface-400">
                       {selectedTask.description}
                     </p>
                   </div>
@@ -437,16 +437,16 @@ const Calendar = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="text-sm font-medium text-readable mb-2">Due Date</h4>
-                    <div className="flex items-center gap-2 text-readable-secondary">
+                    <h4 className="text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">Due Date</h4>
+                    <div className="flex items-center gap-2 text-surface-600 dark:text-surface-400">
                       <ApperIcon name="Calendar" className="w-4 h-4" />
                       <span>{format(parseISO(selectedTask.dueDate), 'MMMM dd, yyyy')}</span>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-medium text-readable mb-2">Project</h4>
-                    <div className="flex items-center gap-2 text-readable-secondary">
+                    <h4 className="text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">Project</h4>
+                    <div className="flex items-center gap-2 text-surface-600 dark:text-surface-400">
                       <ApperIcon name="Folder" className="w-4 h-4" />
                       <span>{getProjectName(selectedTask.projectId)}</span>
                     </div>
@@ -455,7 +455,7 @@ const Calendar = () => {
 
                 {selectedTask.tags.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-medium text-readable mb-2">Tags</h4>
+                    <h4 className="text-sm font-medium text-surface-900 dark:text-surface-100 mb-2">Tags</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedTask.tags.map((tag, index) => (
                         <span 
@@ -471,7 +471,7 @@ const Calendar = () => {
 
                 {selectedTask.timeEntries && selectedTask.timeEntries.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-medium text-readable mb-3">
+                    <h4 className="text-sm font-medium text-surface-900 dark:text-surface-100 mb-3">
                       Time Entries ({getTotalTimeForTask(selectedTask)}h total)
                     </h4>
                     <div className="space-y-2">
@@ -482,10 +482,10 @@ const Calendar = () => {
                         >
                           <div>
                             <div className="flex items-center gap-2 text-sm">
-                              <span className="font-medium text-readable">
+                              <span className="font-medium text-surface-900 dark:text-surface-100">
                                 {timeEntry.hours}h
                               </span>
-                              <span className="text-readable-muted">•</span>
+                              <span className="text-surface-500">•</span>
                               <span className="text-readable-secondary">
                                 {format(parseISO(timeEntry.date), 'MMM dd, yyyy')}
                               </span>
