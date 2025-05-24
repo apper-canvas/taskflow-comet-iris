@@ -565,7 +565,8 @@ const MainFeature = () => {
                         className="w-full p-3 sm:p-4 bg-surface-50 dark:bg-surface-800 border border-surface-200 dark:border-surface-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200"
                       />
                     </div>
-          {/* Tasks List */}
+                  </div>
+
                     {/* Description */}
                     <div>
                       <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
@@ -580,7 +581,6 @@ const MainFeature = () => {
                       />
                     </div>
                   </div>
-          <div className="space-y-4">
                   {/* Form Actions */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 border-t border-surface-200 dark:border-surface-700">
                     <motion.button
@@ -605,6 +605,9 @@ const MainFeature = () => {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Tasks List */}
+          <div className="space-y-4">
             <AnimatePresence>
               {filteredTasks.map((task, index) => (
                 <motion.div
