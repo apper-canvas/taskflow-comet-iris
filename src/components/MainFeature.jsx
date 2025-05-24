@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { format, isValid } from 'date-fns'
 import ApperIcon from './ApperIcon'
+import FileAttachmentManager from './FileAttachmentManager'
 
 const MainFeature = () => {
   const [tasks, setTasks] = useState([
@@ -20,7 +21,8 @@ const MainFeature = () => {
       timeEntries: [
         { id: 'time1', hours: 3, date: format(new Date(), 'yyyy-MM-dd'), description: 'Initial design work' },
         { id: 'time2', hours: 2, date: format(new Date(), 'yyyy-MM-dd'), description: 'Refinements' }
-      ]
+      ],
+      attachments: []
     },
     {
       id: '2',
@@ -34,7 +36,8 @@ const MainFeature = () => {
       createdAt: new Date().toISOString(),
       timeEntries: [
         { id: 'time3', hours: 4, date: format(new Date(), 'yyyy-MM-dd'), description: 'Campaign analysis' }
-      ]
+      ],
+      attachments: []
     }
   ])
 
@@ -103,7 +106,8 @@ const MainFeature = () => {
       tags: formData.tags.split(',').map(tag => tag.trim()).filter(tag => tag),
       createdAt: editingTask ? editingTask.createdAt : new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      timeEntries: editingTask ? editingTask.timeEntries : []
+      timeEntries: editingTask ? editingTask.timeEntries : [],
+      attachments: editingTask ? editingTask.attachments : []
     }
 
     if (editingTask) {
@@ -260,6 +264,33 @@ const MainFeature = () => {
   const getProjectName = (projectId) => {
     const project = projects.find(p => p.id === projectId)
     return project ? project.name : 'No Project'
+  }
+
+  const handleAttachmentUpload = (taskId, files) => {
+    setTasks(prev => prev.map(task => {
+      if (task.id === taskId) {
+        const newAttachments = files.map(file => ({
+          id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          uploadedAt: new Date().toISOString(),
+          file: file
+        }))
+        return { ...task, attachments: [...(task.attachments || []), ...newAttachments] }
+      }
+      return task
+    }))
+  }
+
+  const handleAttachmentDelete = (taskId, attachmentId) => {
+    setTasks(prev => prev.map(task => {
+      if (task.id === taskId) {
+        const updatedAttachments = (task.attachments || []).filter(att => att.id !== attachmentId)
+        return { ...task, attachments: updatedAttachments }
+      }
+      return task
+    }))
   }
 
   return (
@@ -797,6 +828,16 @@ const MainFeature = () => {
                           </div>
                         </div>
                       )}
+
+                      {/* File Attachments */}
+                      <div className="mt-4 pt-4 border-t border-surface-200 dark:border-surface-700">
+                        <FileAttachmentManager
+                          taskId={task.id}
+                          attachments={task.attachments || []}
+                          onUpload={(files) => handleAttachmentUpload(task.id, files)}
+                          onDelete={(attachmentId) => handleAttachmentDelete(task.id, attachmentId)}
+                        />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
