@@ -40,10 +40,7 @@ export default {
         'dark-secondary': '#cbd5e1',
         'dark-muted': '#94a3b8'
       },
-      safelist: [
       fontFamily: {
-    'text-primary-text', 'text-secondary-text', 'text-muted-text'
-      ],
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
         heading: ['Inter', 'ui-sans-serif', 'system-ui']
       },
@@ -59,5 +56,10 @@ export default {
       }
     }
   },
+  safelist: [
+    'text-primary-text',
+    'text-secondary-text', 
+    'text-muted-text'
+  ],
   plugins: []
 }

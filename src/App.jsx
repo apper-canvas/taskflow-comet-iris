@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Analytics from './pages/Analytics'
@@ -29,7 +28,7 @@ function App() {
           pauseOnHover
           theme="colored"
           className="mt-16"
-          toastClassName="rounded-xl shadow-card"
+          toastClassName="rounded-xl shadow-card bg-white dark:bg-surface-800 text-primary-text dark:text-dark-primary border border-surface-200 dark:border-surface-700"
         />
       </div>
     </Router>
