@@ -320,8 +320,8 @@ const MainFeature = () => {
                 </Link>
               </div>
               
-              <h3 className="font-semibold text-readable">Filters</h3>
               <h3 className="font-semibold text-readable-primary">Filters</h3>
+              {[
                 { key: 'all', label: 'All Tasks', icon: 'List' },
                 { key: 'pending', label: 'Pending', icon: 'Clock' },
                 { key: 'in-progress', label: 'In Progress', icon: 'Play' },
